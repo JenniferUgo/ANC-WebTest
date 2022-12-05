@@ -25,6 +25,15 @@ public class webTest {
         WebElement buttonEnter = driver.findElement(By.xpath("/html/body/div/div[2]/div[2]/form/button"));
         buttonEnter.click();
         Thread.sleep(2000);
+
+        //Test
+        WebElement passwordValidation = driver.findElement(By.id("password"));
+        String actualValidationErrorMessage = passwordValidation.getAttribute("validationMessage");
+        if (passwordValidation.isDisplayed()) {
+            System.out.println("Login failed");
+        } else {
+            System.out.println("Login successful");
+        }
     }
 
     @Test (priority = 1)
@@ -36,6 +45,20 @@ public class webTest {
         WebElement buttonEnter = driver.findElement(By.xpath("/html/body/div/div[2]/div[2]/form/button"));
         buttonEnter.click();
         Thread.sleep(2000);
+    }
+    @Test (priority = 2)
+    public void searchItem() throws InterruptedException {
+
+        WebElement searchedItem = driver.findElement(By.xpath("//div[2]/div/h2/span"));
+
+        String expectedItemName = "Designed To Elevate Your Lifestyle";
+        String actualItemName = searchedItem.getText();
+        if (expectedItemName.equals(actualItemName)){
+            System.out.println("Logged in successfully");
+        } else {
+            System.out.println("Not logged in");
+        }
+        Thread.sleep(3000);
     }
 
     @AfterTest
