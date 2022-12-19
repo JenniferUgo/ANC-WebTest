@@ -30,10 +30,26 @@ public class CucumberTestExample {
         driver.get(url);
     }
     @And("inputs Password with DataTable")
-    public void inputs_password_with_data_table(io.cucumber.datatable.DataTable dataTable) {
+    public void inputs_password_with_data_table(DataTable dataTable) throws InterruptedException {
         List<List<String>> data=dataTable.cells();
         driver.findElement(By.id("password")).sendKeys(data.get(0).get(0));
         driver.findElement(By.id("password")).sendKeys(data.get(0).get(1));
+        Thread.sleep(2000);
+
+//        int numberOfRows = dataTable.height();
+//        int numberOfColumns = dataTable.width();
+//
+//        //How to run elements one by one
+//        String firstPasswordFirstRow = dataTable.row(0).get(0);
+//        String secondPasswordFirstRow = dataTable.row(0).get(1);
+//        System.out.println("First Password: " + firstPasswordFirstRow + "Second Password: " + secondPasswordFirstRow);
+//
+//        //How to run it in a loop
+//        for (int i = 0; i < dataTable.height(); i++){
+//            String firstPassword = dataTable.row(i).get(0);
+//            String secondPassword = dataTable.row(i).get(1);
+//            System.out.println("First Password: " + firstPassword + "Second Password: " + secondPassword);
+//        }
     }
     @And("clicks on Login button")
     public void clicks_on_login_button() throws InterruptedException {
@@ -51,7 +67,5 @@ public class CucumberTestExample {
         }
         driver.quit();
     }
-
-
 
 }
