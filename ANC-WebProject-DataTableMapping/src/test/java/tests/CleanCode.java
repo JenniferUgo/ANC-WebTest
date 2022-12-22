@@ -21,7 +21,7 @@ public class CleanCode {
 //        int b = 5;
         CalculationClass calculationClass = new CalculationClass();
         calculationClass.additionFunction(2, 3);
-        calculationClass.subtractionFunction(6, 5);
+        calculationClass.subtractionFunction(4, 3);
 
         int result = calculationClass.additionFunction(3, 4);
         Assert.assertEquals(7, result);

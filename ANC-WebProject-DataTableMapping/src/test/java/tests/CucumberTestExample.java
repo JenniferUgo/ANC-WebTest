@@ -8,6 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import utilities.DataTableHelper;
 import utilities.User;
 
+import java.sql.Driver;
 import java.util.ArrayList;
 
 
@@ -15,6 +16,7 @@ public class CucumberTestExample {
     //ArrayList<User> myUserList = new ArrayList<User>();
 
     private WebDriver driver;
+    WebDriver webDriver = new ChromeDriver();
 
 //    @BeforeTest
 //    public void setUp(){
@@ -23,6 +25,14 @@ public class CucumberTestExample {
     @Given("My browser is up and running and website is loaded")
     public void my_browser_is_up_and_running_and_website_is_loaded() {
         // Write code here that turns the phrase above into concrete actions
+        AboutUsPageObject myAboutUsPageObject = new AboutUsPageObject(webDriver);
+        myAboutUsPageObject.clickHomeLink();
+        myAboutUsPageObject.clickShopLink();
+        myAboutUsPageObject.clickContactLink();
+        myAboutUsPageObject.selectTabOneText();
+        myAboutUsPageObject.selectTabTwoText();
+        myAboutUsPageObject.selectTabTwoText();
+        myAboutUsPageObject.clickBackToShopButton();
     }
     @Then("Test using following data")
     public void test_using_following_data(DataTable dataTable) {
@@ -54,7 +64,7 @@ public class CucumberTestExample {
         //Create a list of users so that I can add my user object to it
         myUserList = DataTableHelper.getUserList(dataTable);
 
-        //Map the data table into an Object. In the case a User Object
+        //Map the data table into an Object. In this case a User Object
         for (int i = 0; i < dataTable.height(); i++) {
             String firstName = dataTable.row(i).get(0);
             String secondName = dataTable.row(i).get(1);
