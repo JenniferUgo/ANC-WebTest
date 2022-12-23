@@ -31,7 +31,7 @@ public class CucumberTestExample {
         myAboutUsPageObject.clickContactLink();
         myAboutUsPageObject.selectTabOneText();
         myAboutUsPageObject.selectTabTwoText();
-        myAboutUsPageObject.selectTabTwoText();
+        myAboutUsPageObject.selectTabThreeText();
         myAboutUsPageObject.clickBackToShopButton();
     }
     @Then("Test using following data")
