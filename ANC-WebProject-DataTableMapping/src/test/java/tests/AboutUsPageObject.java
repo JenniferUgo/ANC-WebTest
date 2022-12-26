@@ -53,13 +53,16 @@ public class AboutUsPageObject {
         Assert.assertEquals(tabThree.isDisplayed(), true);
         tabThree.getText();
     }
+    public void getPageTitle(){
+        WebElement pageTitle = driver.findElement(tvPageTitle);
+        Assert.assertEquals(pageTitle.isDisplayed(), true);
+        pageTitle.getText();
+    }
     public void clickBackToShopButton(){
         WebElement backToShopButton = driver.findElement(btnBackToShop);
         Assert.assertEquals(backToShopButton.isDisplayed(), true);
         backToShopButton.click();
     }
-
-
 //    public void setNameValue(String keysToPass){
 //        WebElement name = driver.findElement(etName);
 //        name.sendKeys(keysToPass);

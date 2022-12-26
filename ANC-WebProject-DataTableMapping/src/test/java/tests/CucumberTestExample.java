@@ -24,7 +24,6 @@ public class CucumberTestExample {
 //    }
     @Given("My browser is up and running and website is loaded")
     public void my_browser_is_up_and_running_and_website_is_loaded() {
-        // Write code here that turns the phrase above into concrete actions
         AboutUsPageObject myAboutUsPageObject = new AboutUsPageObject(webDriver);
         myAboutUsPageObject.clickHomeLink();
         myAboutUsPageObject.clickShopLink();
