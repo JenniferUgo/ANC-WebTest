@@ -8,7 +8,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import utilities.DataTableHelper;
 import utilities.User;
 
-import java.sql.Driver;
 import java.util.ArrayList;
 
 
@@ -28,9 +27,10 @@ public class CucumberTestExample {
         myAboutUsPageObject.clickHomeLink();
         myAboutUsPageObject.clickShopLink();
         myAboutUsPageObject.clickContactLink();
-        myAboutUsPageObject.selectTabOneText();
-        myAboutUsPageObject.selectTabTwoText();
-        myAboutUsPageObject.selectTabThreeText();
+        myAboutUsPageObject.getTabOneText();
+        myAboutUsPageObject.getTabTwoText();
+        myAboutUsPageObject.getTabThreeText();
+        myAboutUsPageObject.getPageTitleText();
         myAboutUsPageObject.clickBackToShopButton();
     }
     @Then("Test using following data")

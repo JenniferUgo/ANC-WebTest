@@ -38,22 +38,22 @@ public class AboutUsPageObject {
         Assert.assertEquals(contact.isDisplayed(), true);
         contact.click();
     }
-    public void selectTabOneText(){
+    public void getTabOneText(){
         WebElement tabOne = driver.findElement(tvTabOne);
         Assert.assertEquals(tabOne.isDisplayed(), true);
         tabOne.getText();
     }
-    public void selectTabTwoText(){
+    public void getTabTwoText(){
         WebElement tabTwo = driver.findElement(tvTabTwo);
         Assert.assertEquals(tabTwo.isDisplayed(), true);
         tabTwo.getText();
     }
-    public void selectTabThreeText(){
+    public void getTabThreeText(){
         WebElement tabThree = driver.findElement(tvTabThree);
         Assert.assertEquals(tabThree.isDisplayed(), true);
         tabThree.getText();
     }
-    public void getPageTitle(){
+    public void getPageTitleText(){
         WebElement pageTitle = driver.findElement(tvPageTitle);
         Assert.assertEquals(pageTitle.isDisplayed(), true);
         pageTitle.getText();
